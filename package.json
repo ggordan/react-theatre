@@ -1,0 +1,27 @@
+{
+  "name": "react-theatre",
+  "version": "0.1",
+  "description": "A React component which accepts one or more React elements and allows you to navigate them in a lightbox.",
+  "author": "Gordan Grasarevic <me@ggordan.com>",
+  "main": "src/theatre.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ggordan/react-theatre"
+  },
+  "keywords": [
+    "react-component",
+    "react",
+    "lightbox",
+    "fancybox",
+    "colorbox",
+    "theatre"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^0.12.0"
+  },
+  "devDependencies": {
+    "jsx-loader": "^0.12.2",
+    "webpack": "^1.7.3"
+  }
+}
