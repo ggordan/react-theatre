@@ -12,11 +12,13 @@ var Theatre = React.createClass({
 	propTypes: {
 		closeHandler: React.PropTypes.func.isRequired,
 		showProgress: React.PropTypes.bool,
+		openItemIndex: React.PropTypes.number,
 	},
 
 	getDefaultProps: function() {
 		return {
 			showProgress: true,
+			openItemIndex: 0,
 		};
 	},
 
@@ -53,6 +55,11 @@ var Theatre = React.createClass({
 	// LIFECYCLE
 
 	componentWillMount: function() {
+		if (this.props.openItemIndex) {
+			this.setState({
+				currentItem: this.props.openItemIndex,
+			});
+		}
 		document.addEventListener('keydown', this._bindKeys);
 		document.getElementsByTagName('body')[0].style.overflow = 'hidden';
 	},
