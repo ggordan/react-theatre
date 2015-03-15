@@ -10,6 +10,7 @@ var Theatre = React.createClass({
 	mixins: [ PureRenderMixin, StyleMixin ],
 
 	propTypes: {
+		entries: React.PropTypes.arrayOf(React.PropTypes.element).isRequired,
 		closeHandler: React.PropTypes.func.isRequired,
 		showProgress: React.PropTypes.bool,
 		openItemIndex: React.PropTypes.number,
@@ -32,6 +33,10 @@ var Theatre = React.createClass({
 
 	_getProgress: function() {
 		return (this.state.currentItem/this.props.entries.length) * 100;
+	},
+
+	_close: function(event) {
+		this.props.closeHandler(this.state.currentIndex);
 	},
 
 	// EVENT HANDLERS
@@ -88,7 +93,7 @@ var Theatre = React.createClass({
 				<div className="theatre-bodyWrapper" style={this._theatreBodyWrapperStyle()}>
 					<div className="theatre-header" style={this._theatreHeaderStyle()}>
 						<div className="theatre-select" style={this._theatreSelectStyle()}></div>
-						<div className="theatre-close" style={this._theatreCloseStyle()} onClick={this.props.closeHandler}>x</div>
+						<div className="theatre-close" style={this._theatreCloseStyle()} onClick={this._close}>x</div>
 					</div>
 					<div className="theatre-content" style={this._theatreContentStyle()}>
 						{this.props.entries[this.state.currentItem]}
