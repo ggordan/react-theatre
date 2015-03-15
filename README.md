@@ -63,8 +63,8 @@ React.render(<App entries={items} />, document.getElementById('app'));
 
 ## Required props
 
-- entries `React.PropTypes.arrayOf(React.PropTypes.element)` - The only required property is an array of React elements that you want to render.
-- closeHandler `React.PropTypes.func` - The method to call when the user clicks on the close button.
+- **entries** `React.PropTypes.arrayOf(React.PropTypes.element)` - The only required property is an array of React elements that you want to render.
+- **closeHandler** `React.PropTypes.func` - The function(currentItemIndex) to call when the user clicks on the close button.
 
 ## Optional props
 
