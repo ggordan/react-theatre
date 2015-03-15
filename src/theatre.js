@@ -48,7 +48,7 @@ var Theatre = React.createClass({
 		}
 
 		this.setState({
-			currentItem: Math.max(this.state.currentItem+offset, 0),
+			currentItem: Math.min(Math.max(this.state.currentItem+offset, 0), this.props.entries.length-1),
 		});
 	},
 
@@ -69,7 +69,7 @@ var Theatre = React.createClass({
 
 	componentWillUnmount: function() {
 		document.removeEventListener('keydown', this._bindKeys);
-		document.getElementsByTagName('body')[0].style.overflow = 'scroll';
+		document.getElementsByTagName('body')[0].style.overflow = 'auto';
 	},
 
 
