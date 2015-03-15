@@ -23,5 +23,8 @@
   "devDependencies": {
     "jsx-loader": "^0.12.2",
     "webpack": "^1.7.3"
+  },
+  "dependencies": {
+    "lodash": "^3.5.0"
   }
 }

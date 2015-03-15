@@ -1,4 +1,4 @@
-var update = require('react/addons').addons.update;
+var _ = require('lodash');
 
 module.exports = {
 
@@ -64,60 +64,39 @@ module.exports = {
 	},
 
 	_theatreBodyWrapperStyle: function() {
-		return update({
+		return _.assign({
 			position: 'absolute',
 			height: 'calc(100% - 8vw)',
 			width: 'calc(100% - 8vw)',
 			margin: '4vw',
 			zIndex: 2,
-		}, {
-			$merge: this.displayFlex(),
-			$merge: this.flexFlow('column'),
-		});
+		}, this.displayFlex(), this.flexFlow('column'));
 	},
 
 	_theatreHeaderStyle: function() {
-		return update({
+		return _.assign({
 			marginBottom: '2vh',
-		}, {
-			$merge: this.displayFlex(),
-		});
+		}, this.displayFlex());
 	},
 
 	_theatreSelectStyle: function() {
-		return update({
-			background: 'red',
-			minHeight: '100px',
-		}, {
-			$merge: this.alignItems('center'),
-			$merge: this.justifyContent('center'),
-			$merge: this.flex('1 1 auto'),
-		});
+		return _.assign({}, this.alignItems('center'), this.justifyContent('center'), this.flex('1 1 auto'));
 	},
 
 	_theatreCloseStyle: function() {
-		return update({
+		return _.assign({
 			color: '#ccc',
 			cursor: 'pointer',
 			padding: '1vh 2vw',
 			fontSize: '2em',
-		}, {
-			$merge: this.alignItems('center'),
-			$merge: this.justifyContent('center'),
-			$merge: this.flex('0 0 auto'),
-		});
+		}, this.alignItems('center'), this.justifyContent('center'), this.flex('0 0 auto'));
 	},
 
 	_theatreContentStyle: function() {
-		return update({
+		return _.assign({
 			height: '100%',
 			overflowY: 'scroll',
-		}, {
-			$merge: this.displayFlex(),
-			$merge: this.alignItems('center'),
-			$merge: this.justifyContent('center'),
-			$merge: this.flexFlow('column'),
-		});
+		}, this.displayFlex(), this.justifyContent('center'), this.flexFlow('column'));
 	},
 
 	_progressStyle: function(width) {
