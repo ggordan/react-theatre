@@ -1,6 +1,6 @@
 {
   "name": "react-theatre",
-  "version": "0.1",
+  "version": "0.0.1",
   "description": "A React component which accepts one or more React elements and allows you to navigate them in a lightbox.",
   "author": "Gordan Grasarevic <me@ggordan.com>",
   "main": "src/theatre.js",
